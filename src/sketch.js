@@ -14,3 +14,5 @@ function sketch(p) {
     p.ellipse(p.mouseX, p.mouseY, 80, 80);
   };
 };
+
+export default sketch;
