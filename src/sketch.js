@@ -1,6 +1,4 @@
 function sketch(p) {
-  let rotation = 0;
-
   p.setup = function () {
     p.createCanvas(500, 500);
   };
@@ -13,6 +11,6 @@ function sketch(p) {
     }
     p.ellipse(p.mouseX, p.mouseY, 80, 80);
   };
-};
+}
 
 export default sketch;
