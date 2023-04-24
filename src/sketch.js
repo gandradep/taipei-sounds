@@ -1,9 +1,7 @@
 /* eslint-disable */
 function sketch(p) {
-  let rotation = 0;
-
   p.setup = function () {
-    p.createCanvas(500, 500);
+    p.createCanvas(1000, 500);
   };
 
   p.draw = function () {
@@ -14,6 +12,6 @@ function sketch(p) {
     }
     p.ellipse(p.mouseX, p.mouseY, 80, 80);
   };
-};
+}
 
 export default sketch;
