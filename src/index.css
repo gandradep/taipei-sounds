@@ -15,3 +15,11 @@ code {
 .salmon {
   background-color: salmon;
 }
+
+a,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: rgb(68, 68, 68);
+}

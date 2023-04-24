@@ -1,6 +1,7 @@
+/* eslint-disable */
 function sketch(p) {
   p.setup = function () {
-    p.createCanvas(500, 500);
+    p.createCanvas(1000, 500);
   };
 
   p.draw = function () {
