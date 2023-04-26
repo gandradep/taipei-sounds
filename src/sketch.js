@@ -1,16 +1,20 @@
 /* eslint-disable */
+
+
 function sketch(p) {
+  let img;
+  p.preload = function () {
+    img = p.loadImage('./assets/busScratch.jpg');
+  }
   p.setup = function () {
-    p.createCanvas(1000, 500);
+    p.createCanvas(810, 540);
+    img.resize(p.width, p.height);
   };
 
   p.draw = function () {
-    if (p.mouseIsPressed) {
-      p.fill(0);
-    } else {
-      p.fill(255);
-    }
-    p.ellipse(p.mouseX, p.mouseY, 80, 80);
+
+    p.rect(0,0, p.width, p.height);
+    p.image(img,0,0);
   };
 }
 

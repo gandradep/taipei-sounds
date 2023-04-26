@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Team from './components/Team';
 import Interaction from './components/Interaction';
+// import Inter from './components/Inter';
 
 function App() {
   return (

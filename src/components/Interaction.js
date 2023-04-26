@@ -1,4 +1,6 @@
+import * as React from 'react';
 import { ReactP5Wrapper } from 'react-p5-wrapper';
+import 'p5/lib/addons/p5.sound';
 import sketch from '../sketch';
 
 const Interaction = () => (
