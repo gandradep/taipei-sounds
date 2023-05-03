@@ -7,11 +7,13 @@ import Transport from './Transport';
 const Inter = () => {
   const x = 50;
   const y = 50;
-  let busBg, bus, gTruck, mrt;
+  let busBg, mrtBg, gBg, bus, gTruck, mrt;
   let mySound;
   let test;
   const preload = (p5) => {
-    busBg = p5.loadImage('./assets/busScratch.jpg');
+    busBg = p5.loadImage('./assets/busBg.jpg');
+    gBg = p5.loadImage('./assets/gBg.jpg');
+    mrtBg = p5.loadImage('./assets/mrtBg.jpg');
     bus = p5.loadImage('./assets/bus.png');
     gTruck = p5.loadImage('./assets/garbageTruck.png');
     mrt = p5.loadImage('./assets/mrt.png');
@@ -20,23 +22,25 @@ const Inter = () => {
   };
   const setup = (p5, parent) => {
     const vehicle = [bus, mrt, gTruck];
+    const bgImage = [busBg, mrtBg, gBg];
     const cnv = p5.createCanvas(810, 540).parent(parent);
     cnv.mousePressed(() => {
       mySound.play();
     })
-    busBg.resize(p5.width, p5.height);
+    for (let i = 0; i< bgImage.length; i++){
+      bgImage[i].resize(p5.width, p5.height);
+    }
     for (let i = 0; i< vehicle.length; i++){
       vehicle[i].resize(p5.width*0.25, p5.height*0.20);
     }
     // mrt.resize(p5.width*0.25, p5.height*0.20);
     // bus.resize(p5.width*0.25, p5.height*0.20)
     // gTruck.resize(p5.width*0.25, p5.height*0.20)
-    test = new Transport(gTruck, p5.height*0.75);
+    test = new Transport(vehicle, bgImage, p5.height*0.75);
   };
   const draw = (p5) => {
     p5.rect(0, 0, p5.width, p5.height);
-    p5.image(busBg, 0, 0);
-    test.show(p5, p5.mouseX);
+    test.show(p5, p5.mouseX, 2);
 
   };
 
