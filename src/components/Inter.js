@@ -3,6 +3,7 @@ import React from 'react';
 import Sketch from 'react-p5';
 import 'p5/lib/addons/p5.sound';
 import Transport from './Transport';
+import Button from './Button';
 
 const Inter = () => {
   const x = 50;
@@ -10,6 +11,7 @@ const Inter = () => {
   let busBg, mrtBg, gBg, bus, gTruck, mrt;
   let mrtSoundRemix;
   let test;
+  let button1, button2;
   let step = 0;
   const preload = (p5) => {
     busBg = p5.loadImage('./assets/busBg.jpg');
@@ -29,24 +31,33 @@ const Inter = () => {
     //   mySound.play();
     // })
     for (let i = 0; i< bgImage.length; i++){
-      bgImage[i].resize(p5.width, p5.height);
+      bgImage[i].resize(p5.width, p5.height*0.9 );
     }
     for (let i = 0; i< vehicle.length; i++){
       vehicle[i].resize(p5.width*0.25, p5.height*0.20);
     }
-
-    test = new Transport(vehicle, bgImage, p5.height*0.75);
+    button1 = new Button(0, p5.height*0.9);
+    button2 = new Button(p5.width/2, p5.height*0.9);
+    test = new Transport(vehicle, bgImage, p5.height*0.69);
   };
   const draw = (p5) => {
+    p5.noFill();
     p5.rect(0, 0, p5.width, p5.height);
     test.show(p5, p5.mouseX, step);
+    button1.show(p5);
+    button2.show(p5);
+    // p5.rect(0, p5.height*0.9, p5.width/2, p5.height*0.1);
+    // p5.rect(p5.width/2, p5.height*0.9, p5.width/2, p5.height*0.1);
 
   };
 
-  const mousePressed = () => {
-    step ++;
-    step = step % 3;
-    console.log(step);
+  const mousePressed = (p5) => {
+
+    if(p5.mouseX<p5.width&&p5.mouseX>0&&p5.mouseY>0&&p5.mouseY<p5.height){
+      step ++;
+      step = step % 3;
+
+    }
   }
 
   return (
