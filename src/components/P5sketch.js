@@ -6,9 +6,7 @@ import Transport from './Transport';
 
 const P5sketch = (props) => {
   const test = useRef(Transport);
-
-  const x = 50;
-  const y = 50;
+  let yxtra, angle = 0;
   let busBg, mrtBg, gBg, bus, gTruck, mrt;
   let mrtSoundRemix;
   const preload = (p5) => {
@@ -34,14 +32,14 @@ const P5sketch = (props) => {
     for (let i = 0; i< vehicle.length; i++){
       vehicle[i].resize(p5.width*0.25, p5.height*0.20);
     }
-    test.current = new Transport(vehicle, bgImage, p5.height*0.69);
+    test.current = new Transport(vehicle, bgImage, p5.width*0.1, p5.height*0.69);
   };
   const draw = (p5) => {
     p5.noFill();
     p5.rect(0, 0, p5.width, p5.height);
-    test.current.show(p5, p5.mouseX, props.count);
-    // button1.show(p5);
-    // button2.show(p5);
+    test.current.show(p5, props.count, yxtra);
+    angle += 0.02;
+    yxtra = 5 * Math.sin(angle)
 
   };
 
