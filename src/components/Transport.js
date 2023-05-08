@@ -6,9 +6,9 @@ class Transport {
     this.x = x;
   }
 
-  show(p5, num, xtra) {
+  show(p5, num, xXtra, xtra) {
     p5.image(this.bgImg[num], 0, 0);
-    p5.image(this.img[num], this.x, this.y + xtra);
+    p5.image(this.img[num], this.x + xXtra, this.y + xtra);
   }
 }
 

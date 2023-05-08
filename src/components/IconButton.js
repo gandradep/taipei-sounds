@@ -1,19 +1,12 @@
-// class Button {
-//   constructor(x, y) {
-//     this.x = x;
-//     this.y = y;
-//   }
-
-//   show(p5) {
-//     p5.fill(150);
-//     p5.rect(this.x, this.y, p5.width / 2, p5.height * 0.9);
-//   }
-// }
+import PropTypes from 'prop-types';
 
 const IconButton = ({ count, setCount }) => (
   <>
-    <button onClick={() => setCount((count + 1) % 3)}>Vehicle</button>
+    <button type="button" onClick={() => setCount((count + 1) % 3)}>Vehicle</button>
   </>
 );
-
+IconButton.propTypes = {
+  count: PropTypes.number.isRequired,
+  setCount: PropTypes.func.isRequired,
+};
 export default IconButton;

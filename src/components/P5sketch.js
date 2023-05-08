@@ -5,8 +5,10 @@ import 'p5/lib/addons/p5.sound';
 import Transport from './Transport';
 
 const P5sketch = (props) => {
+  const {count, posCheck} = props;
   const test = useRef(Transport);
   let yxtra, angle = 0;
+  let xXtra = 0 ;
   let busBg, mrtBg, gBg, bus, gTruck, mrt;
   let mrtSoundRemix;
   const preload = (p5) => {
@@ -37,20 +39,21 @@ const P5sketch = (props) => {
   const draw = (p5) => {
     p5.noFill();
     p5.rect(0, 0, p5.width, p5.height);
-    test.current.show(p5, props.count, yxtra);
+    test.current.show(p5, count, xXtra, yxtra);
     angle += 0.02;
     yxtra = 5 * Math.sin(angle)
-
+    xXtra = posCheck ? p5.width/2 : 0;
+    console.log(posCheck+" "+xXtra)
   };
 
-  const mousePressed = (p5) => {
-    console.log(props.count);
+  // const mousePressed = (p5) => {
+  //   console.log(props.count);
 
-  }
+  // }
 
   return (
     <div className="d-flex justify-content-center">
-      <Sketch preload={preload} setup={setup} draw={draw} mousePressed={mousePressed} />
+      <Sketch preload={preload} setup={setup} draw={draw} />
 
     </div>
   );
