@@ -10,7 +10,8 @@ const P5sketch = (props) => {
   let yxtra, angle = 0;
   let xXtra = 0 ;
   let busBg, mrtBg, gBg, bus, gTruck, mrt;
-  let mrtSoundRemix;
+  let mrtRemix, busRemix, garRemix, currentSong;
+  let songsRemix = [busRemix, mrtRemix, garRemix];
   const preload = (p5) => {
     busBg = p5.loadImage('./assets/busBg.jpg');
     gBg = p5.loadImage('./assets/gBg.jpg');
@@ -19,11 +20,16 @@ const P5sketch = (props) => {
     gTruck = p5.loadImage('./assets/garbageTruck.png');
     mrt = p5.loadImage('./assets/mrt.png');
     p5.soundFormats('mp3', 'ogg');
-    mrtSoundRemix = p5.loadSound('./assets/mrtRemixV2.mp3');
+    mrtRemix = p5.loadSound('./assets/mrtRemixV2.mp3');
+    busRemix = p5.loadSound('./assets/busRemix.mp3');
+    garRemix = p5.loadSound('./assets/garRemix.mp3');
+    songsRemix = [busRemix, mrtRemix, garRemix];
+
   };
   const setup = (p5, parent) => {
     const vehicle = [bus, mrt, gTruck];
     const bgImage = [busBg, mrtBg, gBg];
+    console.log(songsRemix);
     p5.createCanvas(810, 540).parent(parent);
     // cnv.mousePressed(() => {
     //   mySound.play();
@@ -43,17 +49,19 @@ const P5sketch = (props) => {
     angle += 0.02;
     yxtra = 5 * Math.sin(angle)
     xXtra = posCheck ? p5.width/2 : 0;
-    console.log(posCheck+" "+xXtra)
+    console.log(count);
+    currentSong = count;
   };
 
-  // const mousePressed = (p5) => {
-  //   console.log(props.count);
-
-  // }
+  const mousePressed = (p5) => {
+    console.log(count + " " +currentSong);
+    // currentSong.stop();
+    // currentSong.play();
+  }
 
   return (
     <div className="d-flex justify-content-center">
-      <Sketch preload={preload} setup={setup} draw={draw} />
+      <Sketch preload={preload} setup={setup} draw={draw} mousePressed={mousePressed} />
 
     </div>
   );
