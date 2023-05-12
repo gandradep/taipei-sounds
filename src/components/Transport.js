@@ -5,7 +5,8 @@ class Transport {
     this.songR = songR;
     this.y = y;
     this.x = x;
-    this.var = -1;
+    this.var = 0;
+    this.isPlaying = false;
   }
 
   show(p5, num, xXtra, xtra) {
@@ -13,15 +14,23 @@ class Transport {
     p5.image(this.img[num], this.x + xXtra, this.y + xtra);
   }
 
-  playSound(num) {
-    if (this.var !== num) {
-      if(this.var >= 0) {
-        this.songR[this.var].stop();
-      }
-      this.var = num;
-      this.songR[num].play();
+  playSound(num, pCheck) {
+
+    if (pCheck) {
+      console.log('playing:'+num);
+    } else {
+      console.log('stop:'+num);
     }
-    // this.songR[num].play();
+    // if (this.var !== num) {
+    //   if (this.var >= 0) {
+    //     this.songR[this.var].stop();
+    //   }
+    //   this.var = num;
+    //   this.songR[num].play();
+    // }
+  }
+  checkTrack(num) {
+
   }
 }
 
