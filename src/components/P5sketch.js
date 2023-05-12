@@ -11,7 +11,6 @@ const P5sketch = (props) => {
   let xXtra = 0 ;
   let busBg, mrtBg, gBg, bus, gTruck, mrt;
   let mrtRemix, busRemix, garRemix, currentSong;
-  let songsRemix = [busRemix, mrtRemix, garRemix];
   const preload = (p5) => {
     busBg = p5.loadImage('./assets/busBg.jpg');
     gBg = p5.loadImage('./assets/gBg.jpg');
@@ -23,12 +22,13 @@ const P5sketch = (props) => {
     mrtRemix = p5.loadSound('./assets/mrtRemixV2.mp3');
     busRemix = p5.loadSound('./assets/busRemix.mp3');
     garRemix = p5.loadSound('./assets/garRemix.mp3');
-    songsRemix = [busRemix, mrtRemix, garRemix];
+
 
   };
   const setup = (p5, parent) => {
     const vehicle = [bus, mrt, gTruck];
     const bgImage = [busBg, mrtBg, gBg];
+    const songsRemix = [busRemix, mrtRemix, garRemix];
     console.log(songsRemix);
     p5.createCanvas(810, 540).parent(parent);
     // cnv.mousePressed(() => {
@@ -40,21 +40,21 @@ const P5sketch = (props) => {
     for (let i = 0; i< vehicle.length; i++){
       vehicle[i].resize(p5.width*0.25, p5.height*0.20);
     }
-    test.current = new Transport(vehicle, bgImage, p5.width*0.1, p5.height*0.69);
+    test.current = new Transport(vehicle, bgImage, songsRemix, p5.width*0.1, p5.height*0.69);
   };
   const draw = (p5) => {
     p5.noFill();
     p5.rect(0, 0, p5.width, p5.height);
     test.current.show(p5, count, xXtra, yxtra);
+    test.current.playSound(count);
     angle += 0.02;
     yxtra = 5 * Math.sin(angle)
     xXtra = posCheck ? p5.width/2 : 0;
-    console.log(count);
-    currentSong = count;
+
   };
 
   const mousePressed = (p5) => {
-    console.log(count + " " +currentSong);
+
     // currentSong.stop();
     // currentSong.play();
   }
