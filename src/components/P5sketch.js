@@ -51,7 +51,8 @@ const P5sketch = (props) => {
     yxtra = 5 * Math.sin(angle);
     xXtra = posCheck ? p5.width/2 : 0;
     test.current.show(p5, count, xXtra, yxtra);
-    test.current.playSound(count, playCheck);
+    test.current.playSound(count, playCheck, posCheck);
+
   };
 
   const mousePressed = (p5) => {

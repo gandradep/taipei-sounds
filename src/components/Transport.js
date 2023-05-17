@@ -5,40 +5,43 @@ class Transport {
     this.y = y;
     this.x0 = x0;
     this.x = 0;
+    this.whatever = false;
     this.var = 0;
     this.isPlaying = false;
     this.songMix = songMix;
     this.song0 = song0;
-    this.current = [];
+    this.current = this.song0;
+    this.data = [false, 0];
+    this.dataCopy = this.data;
   }
 
   show(p5, num, xXtra, xtra) {
     this.x = this.x0 + xXtra;
     p5.image(this.bgImg[num], 0, 0);
     p5.image(this.img[num], this.x, this.y + xtra);
-
   }
 
-  playSound(num, pCheck) {
-    this.current = (this.x === this.x0) ? this.song0 : this.songMix;
-    console.log(this.x);
-    // console.log(this.x);
-    // console.log(this.current);
+  playSound(num, pCheck, posCheck) {
+    this.data = [posCheck, num];
     if (pCheck) {
-      if (this.var !== num) {
-        // this.songR[this.var].stop();
-        console.log('Next stop:' + this.current[this.var].url);
-        this.var = num;
+      if (this.data.toString() !== this.dataCopy.toString()) {
+        console.log('Datastop ' + this.current[this.var].url);
+        this.current[this.var].stop();
+        this.current = (this.x === this.x0) ? this.song0 : this.songMix;
+        this.dataCopy = this.data;
+        [this.whatever, this.var] = this.dataCopy;
         this.isPlaying = pCheck;
-        // this.songR[num].play();
-        console.log('NExtplaying:' + this.current[this.var].url);
+        console.log('play ' + this.current[this.var].url);
+        this.current[this.var].play();
       }
       if (this.isPlaying !== pCheck) {
         console.log('playing:' + this.current[this.var].url);
+        this.current[this.var].play();
         this.isPlaying = pCheck;
       }
     } else {
-      console.log('stop:' + this.current[this.var].url );
+      console.log('stop ' + this.current[this.var].url);
+      this.current[this.var].stop();
       this.isPlaying = pCheck;
     }
   }
