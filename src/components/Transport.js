@@ -25,22 +25,18 @@ class Transport {
     this.data = [posCheck, num];
     if (pCheck) {
       if (this.data.toString() !== this.dataCopy.toString()) {
-        console.log('Datastop ' + this.current[this.var].url);
         this.current[this.var].stop();
         this.current = (this.x === this.x0) ? this.song0 : this.songMix;
         this.dataCopy = this.data;
         [this.whatever, this.var] = this.dataCopy;
         this.isPlaying = pCheck;
-        console.log('play ' + this.current[this.var].url);
         this.current[this.var].play();
       }
       if (this.isPlaying !== pCheck) {
-        console.log('playing:' + this.current[this.var].url);
         this.current[this.var].play();
         this.isPlaying = pCheck;
       }
     } else {
-      console.log('stop ' + this.current[this.var].url);
       this.current[this.var].stop();
       this.isPlaying = pCheck;
     }
