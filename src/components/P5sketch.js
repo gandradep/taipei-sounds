@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Sketch from 'react-p5';
 import 'p5/lib/addons/p5.sound';
 import Transport from './Transport';
@@ -7,6 +7,11 @@ import Transport from './Transport';
 const P5sketch = (props) => {
   const {count, posCheck, playCheck} = props;
   const test = useRef(Transport);
+  useEffect(() => {
+    return () => {
+     audioStop();
+    }
+  },[]);
   let yxtra, angle = 0;
   let xXtra = 0 ;
   let busBg, mrtBg, gBg, bus, gTruck, mrt;
@@ -52,16 +57,15 @@ const P5sketch = (props) => {
     xXtra = posCheck ? p5.width/2 : 0;
     test.current.show(p5, count, xXtra, yxtra);
     test.current.playSound(count, playCheck, posCheck);
-
   };
 
-  const mousePressed = (p5) => {
-    // console.log(currentSong)
+  const audioStop = () => {
+    test.current.playSound(count, false, posCheck);
   }
 
   return (
     <div className="d-flex justify-content-center">
-      <Sketch preload={preload} setup={setup} draw={draw} mousePressed={mousePressed} />
+      <Sketch preload={preload} setup={setup} draw={draw} />
 
     </div>
   );
