@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const IconButton = ({ count, setCount }) => (
   <>
-    <button type="button" onClick={() => setCount((count + 1) % 3)}>
+    <button className="player" type="button" onClick={() => setCount((count + 1) % 3)}>
       <i className="fa-solid fa-van-shuttle" />
     </button>
   </>

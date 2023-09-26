@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const PositionButton = ({ posCheck, setPosCheck }) => (
   <>
-    <button type="button" onClick={() => setPosCheck(!posCheck)}>
+    <button className="player" type="button" onClick={() => setPosCheck(!posCheck)}>
       <i className="fa-solid fa-arrows-left-right" />
     </button>
   </>

@@ -9,19 +9,15 @@ code {
   font-family: 'Courier New', monospace;
 }
 
-.salmon {
-  background-color: salmon;
+.navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
+  color: salmon;
 }
 
-a,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none;
-  color: rgb(68, 68, 68);
+.nav-link {
+  color: white;
 }
 
-button {
+button.player {
   width: 100px;
   height: 100px;
   font-size: 2rem;

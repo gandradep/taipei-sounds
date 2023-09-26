@@ -4,13 +4,13 @@ const PlayButton = ({ playCheck, setPlayCheck }) => {
   let butt;
   if (playCheck) {
     butt = (
-      <button type="button" onClick={() => setPlayCheck(!playCheck)}>
+      <button className="player" type="button" onClick={() => setPlayCheck(!playCheck)}>
         <i className="fa-solid fa-stop" />
       </button>
     );
   } else {
     butt = (
-      <button type="button" onClick={() => setPlayCheck(!playCheck)}>
+      <button className="player" type="button" onClick={() => setPlayCheck(!playCheck)}>
         <i className="fa-solid fa-play" />
       </button>
     );
