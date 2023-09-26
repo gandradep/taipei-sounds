@@ -10,11 +10,17 @@ code {
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
-  color: salmon;
+  color: #fa8072;
+ font-weight: bold;
 }
 
 .nav-link {
   color: white;
+  font-size: 6vw;
+  font-weight: 400;
+  @media (min-width: 576px) {
+    font-size: 2vw;
+  }
 }
 
 button.player {
