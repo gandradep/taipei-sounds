@@ -1,14 +1,17 @@
 const About = () => (
-  <div className="container text-white my-5 col-sm-9 about">
+  <div className="container text-white my-5 col-11 col-sm-9 about">
     <p className="mb-5">
-      Welcome to Taipei Sounds, a unique auditory experience that explores the vibrant sounds of
+      Welcome to
+      <strong> Taipei Sounds </strong>
+      , a unique auditory experience that explores the vibrant sounds of
       Taipei&apos;s streets. Developed as part of the &quot;Fundamental Programming for Digital
       Music and Sound Synthesis&quot; class at National Taiwan Normal University, this project
       offers a creative blend of technology and music.
     </p>
     <h2>Discover the Sounds of Taipei</h2>
     <p className="mb-5">
-      Taipei Soundscapes allows you to immerse yourself in the city&apos;s sonic landscape.
+      <strong> Taipei Sounds </strong>
+      allows you to immerse yourself in the city&apos;s sonic landscape.
       Experience the music of three iconic vehicles: the garbage truck, MRT stations,
       and pre-stop bus tunes.
     </p>
@@ -24,7 +27,8 @@ const About = () => (
 
     <h2>Awards and Recognition</h2>
     <p className="mb-4">
-      Taipei Soundscapes received recognition at the
+      <strong> Taipei Sounds </strong>
+      received recognition at the
       <a href="https://www.aa.ntnu.edu.tw/uploads/asset/data/634cdd78843f758eabb2c4c8/6097_b8bc008a.pdf" target="_blank" rel="noreferrer"> Computer Programming Contest </a>
       organized by NTNU&apos;s Computational Thinking and Programming Education Division.
     </p>
