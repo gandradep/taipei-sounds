@@ -1,3 +1,4 @@
+$salmon : #fa8072;
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -10,7 +11,7 @@ code {
 }
 
 .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
-  color: #fa8072;
+  color: $salmon;
  font-weight: bold;
 }
 
@@ -34,4 +35,11 @@ button.player {
 
 button:active {
   background-color: #7cb375;
+}
+
+.about {
+  a {
+    text-decoration: none;
+    color: $salmon;
+  }
 }
