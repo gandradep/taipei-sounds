@@ -27,9 +27,9 @@ const Inter = () => {
     };
   }, []);
   return (
-    <div className="d-flex flex-column flex-sm-row justify-content-center mt-5">
+    <div className="d-flex flex-column flex-sm-row justify-content-center playerContainer">
       <P5sketch count={count} posCheck={posCheck} playCheck={playCheck} windowWidth={windowWidth} />
-      <div className="d-flex flex-sm-column justify-content-around ps-4">
+      <div className="d-flex flex-sm-column justify-content-around buttons">
         <IconButton count={count} setCount={setCount} />
         <PositionButton posCheck={posCheck} setPosCheck={setPosCheck} />
         <PlayButton playCheck={playCheck} setPlayCheck={setPlayCheck} />
