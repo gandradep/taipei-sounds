@@ -5,7 +5,7 @@ import 'p5/lib/addons/p5.sound';
 import Transport from './Transport';
 
 const P5sketch = (props) => {
-  const {count, posCheck, playCheck} = props;
+  const {count, posCheck, playCheck, windowWidth} = props;
   const test = useRef(Transport);
   useEffect(() => {
     return () => {
@@ -39,8 +39,12 @@ const P5sketch = (props) => {
     const bgImage = [busBg, mrtBg, gBg];
     songsRemix = [busRemix, mrtRemix, garRemix];
     songs0 = [busSong, mrtSong, garbageSong];
+    if (windowWidth < 768 ) {
+      p5.createCanvas(windowWidth, windowWidth*2/3).parent(parent);
+    } else {
+      p5.createCanvas(810, 540).parent(parent);
+    }
 
-    p5.createCanvas(810, 540).parent(parent);
     for (let i = 0; i< bgImage.length; i++){
       bgImage[i].resize(p5.width, p5.height );
     }

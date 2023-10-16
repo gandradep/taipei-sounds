@@ -1,0 +1,75 @@
+$salmon : #fa8072;
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #274445;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
+  color: $salmon;
+ font-weight: bold;
+}
+
+.nav-link {
+  color: white;
+  font-size: 6vw;
+  font-weight: 400;
+  margin: 0 10px;
+  @media (min-width: 576px) {
+    font-size: 2vw;
+  }
+}
+
+.playerContainer{
+  margin-top: 150px;
+  @media (min-width: 576px) {
+    margin-top: 50px;
+  }
+}
+
+.buttons {
+  padding-top: 30px;
+  @media (min-width: 576px) {
+    padding-top: 0px;
+    padding-left: 30px;
+  }
+}
+
+button.player {
+  width: 70px;
+  height: 70px;
+  font-size: 2rem;
+  border-radius: 15%;
+  background-color: #A7F09E;
+  @media (min-width: 576px) {
+    font-size: 2vw;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+button:active {
+  background-color: #7cb375;
+}
+
+.about {
+  line-height: 8vw;
+  p {
+    font-size: 17px;
+    @media (min-width: 576px) {
+      font-size: 20px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $salmon;
+  }
+  @media (min-width: 576px) {
+    line-height: 3vw;
+  }
+}
