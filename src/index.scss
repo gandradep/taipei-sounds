@@ -1,4 +1,5 @@
 $salmon : #fa8072;
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -10,23 +11,26 @@ code {
   font-family: 'Courier New', monospace;
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
-  color: $salmon;
- font-weight: bold;
-}
-
 .nav-link {
   color: white;
   font-size: 6vw;
   font-weight: 400;
   margin: 0 10px;
+
   @media (min-width: 576px) {
     font-size: 2vw;
   }
 }
 
-.playerContainer{
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: $salmon;
+  font-weight: bold;
+}
+
+.playerContainer {
   margin-top: 150px;
+
   @media (min-width: 576px) {
     margin-top: 50px;
   }
@@ -34,8 +38,9 @@ code {
 
 .buttons {
   padding-top: 30px;
+
   @media (min-width: 576px) {
-    padding-top: 0px;
+    padding-top: 0;
     padding-left: 30px;
   }
 }
@@ -45,7 +50,8 @@ button.player {
   height: 70px;
   font-size: 2rem;
   border-radius: 15%;
-  background-color: #A7F09E;
+  background-color: #a7f09e;
+
   @media (min-width: 576px) {
     font-size: 2vw;
     width: 100px;
@@ -59,17 +65,27 @@ button:active {
 
 .about {
   line-height: 8vw;
+
   p {
     font-size: 17px;
+
     @media (min-width: 576px) {
       font-size: 20px;
     }
   }
+
   a {
     text-decoration: none;
     color: $salmon;
   }
+
   @media (min-width: 576px) {
     line-height: 3vw;
   }
+}
+
+.team-titles {
+  color: white;
+  padding-left: 15px;
+  font-weight: 600;
 }
