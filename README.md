@@ -1,5 +1,5 @@
 # Taipei Sounds
-Is an app that allows you to interact with some sounds from Taipei City.
+Is an app that allows you to interact a P5.js sketch with elements outside the sketch. The app allows you to try some sounds from Taipei city.
 > React classes
 > To run the project clone this repo install dependencies `npm install` and run the app `npm start`
 
