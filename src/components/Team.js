@@ -11,8 +11,8 @@ const Team = () => {
     <>
       <h2 className="team-titles">Members:</h2>
       <Members />
-      <h2 className="team-titles">Teacher:</h2>
-      <div className="container member d-flex flex-column align-items-start justify-content-center">
+      <h2 className="team-titles mt-4">Teacher:</h2>
+      <div className="container member d-flex flex-column flex-sm-row align-items-start justify-content-center">
         <div className="d-flex align-items-center justify-content-center my-4">
           <a href={teacher.link} target="_blank" rel="noopener noreferrer" className="">
             <img

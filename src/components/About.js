@@ -32,6 +32,15 @@ const About = () => (
       <a href="https://www.aa.ntnu.edu.tw/uploads/asset/data/634cdd78843f758eabb2c4c8/6097_b8bc008a.pdf" target="_blank" rel="noreferrer"> Computer Programming Contest </a>
       organized by NTNU&apos;s Computational Thinking and Programming Education Division.
     </p>
+    <hr />
+    <p>
+      Whether you&apos;re a fellow enthusiast, a potential collaborator, or simply someone
+      curious about what we do, we encourage you to reach out.
+      If you have any questions, ideas, or inquiries, please don&apos;t hesitate to get in
+      touch with us at
+      <strong> eventsonido@gmail.com</strong>
+      .
+    </p>
   </div>
 );
 
