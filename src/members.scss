@@ -1,16 +1,6 @@
 .member {
   color: white;
-  a {
-    position: relative;
-    width: 200px;
-    margin-left: 10px;
-    &:hover .hover-overlay {
-      background-color: rgba(133, 92, 4, 0.5);
-    }
-    &:active .hover-overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-  }
+
   .hover-overlay {
     position: absolute;
     top: 0;
@@ -20,6 +10,21 @@
     background-color: rgba(0, 0, 0, 0);
     transition: background-color 0.3s;
   }
+
+  a {
+    position: relative;
+    width: 200px;
+    margin-left: 10px;
+
+    &:hover .hover-overlay {
+      background-color: rgba(133, 92, 4, 0.5);
+    }
+
+    &:active .hover-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
   p {
     font-size: 1.25rem;
     font-weight: 600;
